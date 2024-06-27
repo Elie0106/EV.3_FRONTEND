@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arriendo de Vehículos</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light">
+    <header class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>Arriendo de Vehículos</h1>
+    </header>
+    <main class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-4">
+                <form id="formulario" class="card">
+                    <div class="card-header">
+                        <h5>Registro de Vehículos</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Patente</label>
+                            <input type="text" class="form-control" id="patente" name="patente">
+                            <div id="e-patente"></div>
+                        </div>
+                        <div>
+                            <label>Marca</label>
+                            <input type="text" class="form-control" id="marca" name="marca">
+                            <div id="e-marca"></div>
+                        </div>
+                        <div>
+                            <label>Modelo</label>
+                            <input type="text" class="form-control" id="modelo" name="modelo">
+                            <div id="e-modelo"></div>
+                        </div>
+                        <div>
+                            <label>Año</label>
+                            <input type="number" class="form-control" id="año" name="año" min="2000" max="2024">
+                            <div id="e-año"></div>
+                        </div>
+                        <div>
+                            <label>Precio por Día</label>
+                            <input type="number" class="form-control" id="precio" name="precio" min="20000" max="50000">
+                            <div id="e-precio"></div>
+                        </div>
+                        <div>
+                            <label>Disponibilidad</label>
+                            <select class="form-control" id="disponibilidad" name="disponibilidad">
+                                <option value="Disponible">Disponible</option>
+                                <option value="No Disponible">No Disponible</option>
+                            </select>
+                            <div id="e-disponibilidad"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <input type="reset" value="Limpiar" class="btn btn-info" onclick="limpiar()">
+                        <input type="button" id="btnGuardar" value="Guardar" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+            <div class="col-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Patente</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Año</th>
+                                <th>Precio por Día</th>
+                                <th>Disponibilidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoVehiculos">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-4">
+                <form action="" class="card">
+                    <div class="card-header">
+                        <h5>Registros de los Arrendatarios</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" id="nombreArrendatario" name="nombreArrendatario">
+                            <div id="e-nombreArrendatario"></div>
+                        </div>
+                        <div>
+                            <label>Apellido</label>
+                            <input type="text" class="form-control" id="apellidoArrendatario" name="apellidoArrendatario">
+                            <div id="e-apellidoArrendatario"></div>
+                        </div>
+                        <div>
+                            <label>Rut</label>
+                            <input type="text" class="form-control" id="rutArrendatario" name="rutArrendatario">
+                            <div id="e-rutArrendatario"></div>
+                        </div>
+                        <div>
+                            <label>Número de Celular</label>
+                            <input type="text" class="form-control" id="celularArrendatario" name="celularArrendatario">
+                            <div id="e-celularArrendatario"></div>
+                        </div>
+                        <div>
+                            <label>Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correoArrendatario" name="correoArrendatario">
+                            <div id="e-correoArrendatario"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <input type="reset" value="Limpiar" class="btn btn-info" onclick="limpiar()">
+                        <input type="button" id="btnGuardarArrendatario" value="Guardar" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+            <div class="col-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Rut</th>
+                                <th>Número de Celular</th>
+                                <th>Correo Electrónico</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenidoArrendatarios">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/sweetalert2.min.js"></script>
+    <script src="utilidades.js" type="module"></script>
+    <script src="funciones.js" type="module"></script>
+    <script src="firestore.js" type="module"></script>
+</body>
+</html>
